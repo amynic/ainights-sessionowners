@@ -90,12 +90,15 @@ Open Postman, API Development environment on your local machine.
 > Find the download in the [Pre-requisites section](#Pre-requisites-for-your-machine)
 
 Select Create a Request
+
 ![Create A Request](/docs-images/create-request.JPG)
 
 Enter request details and create a new collection
+
 ![Enter Request Details](/docs-images/save-request.JPG)
 
 Select the newly created collection and choose save
+
 ![Save Request](/docs-images/save.JPG)
 
 Now create a request to call your text analytics API:
@@ -104,6 +107,18 @@ Now create a request to call your text analytics API:
 * Select Headers underneath the URL box
 * In Key type ```Ocp-Apim-Subscription-Key``` and in Value add your KEY1 value
 * In Key type ```Content-Type``` and in Value type ```application/json```
+* ![Headers and URL](/docs-images/url-and-headers.JPG)
+* Select Body underneath the URL box
+* Select ```raw``` from the radio button options
+* Copy JSON sample from ```sample-code/text-analytics-demo/sentiment-analysis-text.json``` into the box
+* Select the ```Send``` button and review the Response
+* ![Body and Submit REST Request](/docs-images/rest-body.JPG)
+
+You can also try other options from the REST API - such as KeyPhrases function. Change the end of the URL from sentiment to keyPhrases and select send to view the key phrases for the example text.
+
+* ![Key Phrases REST Request](/docs-images/keyphrases.JPG)
+
+
 
 
 ### Microsoft Azure Cognitive Services - Text Analytics in a Container

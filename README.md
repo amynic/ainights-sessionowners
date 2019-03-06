@@ -118,7 +118,9 @@ You can also try other options from the REST API - such as KeyPhrases function. 
 
 * ![Key Phrases REST Request](/docs-images/keyphrases.JPG)
 
+> Check out the language support for the Text Analytics API [here](https://docs.microsoft.com/en-gb/azure/cognitive-services/text-analytics/language-support). If your language is supported please edit the JSON file to translate the text and show the functionality of the API above. There is an example of a French JSON file in ```sample-code/text-analytics-demo/sentiment-analysis-text-fr.json``` please edit this file as appropriate
 
+> If you have any issues running Postman, API Development Environment you can always run the REST API requests within the API docs for [sentiment analysis](https://northeurope.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9) and [key phrase extraction](https://northeurope.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6). Select the data centre you are using and then enter your key in the box provided along with the sample body sample used in Postman
 
 
 ### Microsoft Azure Cognitive Services - Text Analytics in a Container

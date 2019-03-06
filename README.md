@@ -17,6 +17,7 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 * Laptop with a modern web browser (Google Chrome, Microsoft Edge)
 * [Azure Storage Explorer - available on Windows, Linux and macOS](https://azure.microsoft.com/en-gb/features/storage-explorer/)
 * [Postman, API Development Environment - available on Windows, Linux and macOS](https://www.getpostman.com/downloads/)
+* Clone this repository to your local machine to gain images and code samples you need for the demos: ```git clone https://github.com/amynic/ainights-sessionowners.git```
 
 ## Session Timings
 
@@ -31,6 +32,31 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 ## Content Walk-through
 
 ### Microsoft Azure Cognitive Services - Computer Vision and Text Analytics
+
+First show the Microsoft Azure Cognitive Services in their simplest format - within the web browser. 
+** Navigate to [https://azure.microsoft.com/en-gb/services/cognitive-services/](https://azure.microsoft.com/en-gb/services/cognitive-services/)**
+
+Talk through the options from Vision, Speech, Language, Knowledge and Search very briefly
+
+Select **Vision** to navigate to: [https://azure.microsoft.com/en-gb/services/cognitive-services/directory/vision/](https://azure.microsoft.com/en-gb/services/cognitive-services/directory/vision/)
+
+![Computer Vision website Link highlighted](/docs-images/computer-vision-link.JPG)
+
+Talk through the Vision options very briefly (Scene and Activity Recognition in Images, OCR, Face Detection, Emotion Detection, Video indexer etc)
+
+Select the **Demo** link next to **Scene and activity recognition in images** under **Computer Vision**
+
+Talk through example image shown by default. The ability to scroll through the JSON response and pick out the objects it found, the tags it assigned and description provided for example.
+
+![Computer Vision Example](/docs-images/computer-vision-demo.JPG)
+
+Now select **Browse** button and upload the **cat.jpeg** image from ```sample-images/computer-vision-web-browser/cat.jpeg```
+
+![Computer Vision Cat Example](/docs-images/cat-sample.JPG)
+
+EXTRA: Also, select **Browse** button and upload the **city.jpeg** image from ```sample-images/computer-vision-web-browser/city.jpeg```
+
+![Computer Vision City Example](/docs-images/city-sample.JPG)
 
 ### Microsoft Azure Cognitive Services - Text Analytics in a Container
 

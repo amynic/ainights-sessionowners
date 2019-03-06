@@ -58,6 +58,54 @@ EXTRA: Also, select **Browse** button and upload the **city.jpeg** image from ``
 
 ![Computer Vision City Example](/docs-images/city-sample.JPG)
 
+Now show examples of the Text Analytics API but using the REST protocol as you would use to integrate these services into an application
+
+First log into Microsoft Azure to create a Cognitive Services account.
+
+Select **Create a resource** and search **Cognitive Services** and choose Enter. Then select **Create** on the Cognitive Services blade
+
+![Create Cognitive Services Account](/docs-images/cognitive-azure.JPG)
+
+Enter details to create an account:
+* **Name:** enter a suitable name for the service (example: ainightscognitive)
+* **Subscription:** Choose a relevant subscription
+* **Location:** Choose your closest Data Center available
+* **Pricing Tier:** S0
+* **Resource Group:** Create new, and provide a sensible name (example ainights)
+* **select the checkbox after reading the terms below**
+* **select 'Create'**
+
+![Cognitive Services Details](/docs-images/cognitive-details.JPG)
+
+Once created, in your notifications select **go to resource**
+![Go to Resource](/docs-images/go-to-resource.JPG)
+
+In the Cognitive Services blade, select **Keys** and copy **KEY 1**
+![Copy Key](/docs-images/keys.JPG)
+
+Now select **Overview** and copy the **Endpoint** variable
+![Copy Endpoint](/docs-images/endpoint.JPG)
+
+Open Postman, API Development environment on your local machine. 
+> Find the download in the [Pre-requisites section](#Pre-requisites-for-your-machine)
+
+Select Create a Request
+![Create A Request](/docs-images/create-request.JPG)
+
+Enter request details and create a new collection
+![Enter Request Details](/docs-images/save-request.JPG)
+
+Select the newly created collection and choose save
+![Save Request](/docs-images/save.JPG)
+
+Now create a request to call your text analytics API:
+* Change from a GET request to a POST request in the top left
+* Enter your endpoint URL and add ```text/analytics/v2.0/sentiment``` to the end
+* Select Headers underneath the URL box
+* In Key type ```Ocp-Apim-Subscription-Key``` and in Value add your KEY1 value
+* In Key type ```Content-Type``` and in Value type ```application/json```
+
+
 ### Microsoft Azure Cognitive Services - Text Analytics in a Container
 
 ### Microsoft Azure Cognitive Services - Custom Vision Demo

@@ -3,7 +3,8 @@
 
 This is a GitHub repository provided for **session owners** to access and learn content that can be delivered at **AI Nights** across the globe in **April and September**. This content is designed for the **Beginner Track** and is approx **2 hours worth** of content. Some elements of the workshops are for the speakers to demo and other elements are for attendees to complete on their own devices and with their own Azure Subscription. Please find the public workshop content for attendees here:  [https://github.com/amynic/AINights](https://github.com/amynic/AINights)
 
-## Session Title: 
+## Session Information 
+### Session Title:
 Creating applications that can see, hear, speak or understand - using Microsoft Cognitive Services
 
 ### Session Abstract: 

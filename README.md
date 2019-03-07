@@ -25,11 +25,11 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 
 ## Session Timings
 
-* **30 mins** - Computer Vision + Text Analytics API *(attendees - try it yourself)*
-* **15 mins** - Container support for those APIs *(demonstration by speaker)*
+* **30 mins** - Computer Vision + Text Analytics API *(attendees - try it yourself)* [Go to Section](#microsoft-azure-cognitive-services---computer-vision-and-text-analytics)
+* **15 mins** - Container support for those APIs *(demonstration by speaker only)* [Go to Section](#microsoft-azure-cognitive-services---text-analytics-in-a-container)
 * **5 mins** - Custom AI Options - what is transfer learning?
-* **30 mins** - Custom models using Transfer Learning - Classification + Object Detection *(attendees - try it yourself)*
-* **35 mins** - Build this sample into an app using Logic apps and Power Apps *(attendees - try it yourself)*
+* **30 mins** - Custom models using Transfer Learning - Classification + Object Detection *(attendees - try it yourself)* [Go to Section](#microsoft-azure-cognitive-services---custom-vision-demo)
+* **35 mins** - Build this sample into an app using Logic apps *(attendees - try it yourself)* [Go to Section](#build-custom-ai-into-an-application---azure-logic-apps)
 * **5 mins** - Useful links to share and finish
 
 

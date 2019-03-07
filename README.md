@@ -130,8 +130,61 @@ You can also try other options from the REST API - such as KeyPhrases function. 
 
 Demo based on the Azure Documentation: [Install and run Text Analytics containers](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-install-containers/?WT.mc_id=beginnertrack-globalainights-amynic)
 
+In order to run this demo you will need Docker installed locally on your machine
+[Download docker for your local machine here - available on Windows, Linux and macOS](https://docs.docker.com/docker-for-windows/)
+
+Once the download starts you can see the information of its progress
+![Docker Download](docs-images/docker-download.JPG)
+
+Once installed, run Docker (on windows type docker into the start menu and select Docker Desktop)
+Check the Docker Daemon is running on your machine.
+
+In windows you can find the icon in the bottom left toolbar near the date/time
+
+![Docker Running](docs-images/docker-running.JPG)
+
+In order to run the Cognitive Services Text Analytics API locally you need to get the image for your machine. Open a command prompt within a folder on your machine (I recommend creating an AI-Nights folder if you haven't done already)
+
+Enter the command below
+
+```docker pull mcr.microsoft.com/azure-cognitive-services/sentiment:latest```
+
+and the docker image should start to download to your local registry
+
+![Docker Pull success](docs-images/docker-pull-request-success.JPG)
+
+> If you see an error similar to the below, double check your Docker Daemon is running before executing docker commands. To confirm it is running try the [Getting Started Guide from Docker Here](https://docs.docker.com/docker-for-windows/) ![Docker Error](docs-images/possible-error.JPG)
+
+Now its downloaded we want to start running the container so we can query it with text sentences and gain our sentiment scores back.
+
+In order to run the container you will need you **Cognitive Services Endpoint** and your **API Key** from the previous section
+
+>if you wish to prove the container is local. Disconnect from the internet now
+
+The docker run command looks like below ([or is available here](sample-code/cognitive-containers/run-container-command.txt)). Substitute the data center and API key values and run
+
+```docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 mcr.microsoft.com/azure-cognitive-services/sentiment Eula=accept Billing=https://<datacenter-here>.api.cognitive.microsoft.com/text/analytics/v2.0 ApiKey=<key>```
+
+The container is running on your local machine
+To understand how to query the local API review the Swagger definition here: [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html)
+
+![Swagger Definition](docs-images/swagger.JPG)
+
+To test the API, make a new postman request:
+* POST
+* URL: http://localhost:5000/text/analytics/v2.0/sentiment
+* Headers:
+    * Content-Type : application/json
+    * ![Postman Request for Containers](docs-images/container-postman.JPG)
+
+* Body:
+    * enter the sample JSON input from the [previous exercise](sample-code/text-analytics-demo/sentiment-analysis-text.json)
+    * ![Postman Request for Containers Result](docs-images/container-result.JPG)
 
 
+To stop the container from running when you finish, go back ot the command line and type **CTRL + C** this will show the application shutting down
+
+![Application Shutdown](docs-images/application-shutdown.JPG)
 
 
 ## Microsoft Azure Cognitive Services - Custom Vision Demo

@@ -13,11 +13,15 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 
 
 ## Pre-requisites for your machine
+* Clone this repository to your local machine to gain images and code samples you need for the demos: ```git clone https://github.com/amynic/ainights-sessionowners.git```
 * [Microsoft Azure Subscription](https://azure.microsoft.com/en-gb/free/)
 * Laptop with a modern web browser (Google Chrome, Microsoft Edge)
 * [Azure Storage Explorer - available on Windows, Linux and macOS](https://azure.microsoft.com/en-gb/features/storage-explorer/)
 * [Postman, API Development Environment - available on Windows, Linux and macOS](https://www.getpostman.com/downloads/)
-* Clone this repository to your local machine to gain images and code samples you need for the demos: ```git clone https://github.com/amynic/ainights-sessionowners.git```
+* [Download docker for your local machine - available on Windows, Linux and macOS](https://docs.docker.com/docker-for-windows/)
+
+> *All demos and content have been tested on a Windows PC, however all options should run from macOS and Linux machines as well. Please provide information via an issue or pull request if you have feedback on other operating systems*  
+
 
 ## Session Timings
 
@@ -31,7 +35,7 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 
 ## Content Walk-through
 
-### Microsoft Azure Cognitive Services - Computer Vision and Text Analytics
+## Microsoft Azure Cognitive Services - Computer Vision and Text Analytics
 
 First show the Microsoft Azure Cognitive Services in their simplest format - within the web browser. 
 ** Navigate to [https://azure.microsoft.com/en-gb/services/cognitive-services/](https://azure.microsoft.com/en-gb/services/cognitive-services/)**
@@ -122,9 +126,12 @@ You can also try other options from the REST API - such as KeyPhrases function. 
 
 > If you have any issues running Postman, API Development Environment you can always run the REST API requests within the API docs for [sentiment analysis](https://northeurope.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9) and [key phrase extraction](https://northeurope.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6). Select the data centre you are using and then enter your key in the box provided along with the sample body sample used in Postman
 
+## Microsoft Azure Cognitive Services - Text Analytics in a Container
 
-### Microsoft Azure Cognitive Services - Text Analytics in a Container
+Demo based on the Azure Documentation: [Install and run Text Analytics containers](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-install-containers/?WT.mc_id=beginnertrack-globalainights-amynic)
 
-### Microsoft Azure Cognitive Services - Custom Vision Demo
 
-### Build Custom AI into an Application - Azure Logic Apps and Microsoft PowerApps
+
+## Microsoft Azure Cognitive Services - Custom Vision Demo
+
+## Build Custom AI into an Application - Azure Logic Apps and Microsoft PowerApps

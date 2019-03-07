@@ -16,7 +16,6 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 * Clone this repository to your local machine to gain images and code samples you need for the demos: ```git clone https://github.com/amynic/ainights-sessionowners.git```
 * [Microsoft Azure Subscription](https://azure.microsoft.com/en-gb/free/)
 * Laptop with a modern web browser (Google Chrome, Microsoft Edge)
-* [Azure Storage Explorer - available on Windows, Linux and macOS](https://azure.microsoft.com/en-gb/features/storage-explorer/)
 * [Postman, API Development Environment - available on Windows, Linux and macOS](https://www.getpostman.com/downloads/)
 * [Download docker for your local machine - available on Windows, Linux and macOS](https://docs.docker.com/docker-for-windows/)
 

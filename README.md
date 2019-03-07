@@ -138,7 +138,7 @@ Demo based on the Azure Documentation: [Install and run Text Analytics container
 
 Using Microsoft Azure Custom Vision service you can start to build your own personalised image classification and object detection algorithms with very little code. In this exercise we will create a dog-breed classification algorithm using Dog images from the [ImageNet open dataset created by Standford University](http://vision.stanford.edu/aditya86/ImageNetDogs/)
 
-We have 7 Classes of dogs each with 30 images (available in a .zip file [here](sample-images\dogs.zip))
+We have 7 Classes of dogs each with 30 images (available in a .zip file [here](sample-images/dogs.zip))
 * Beagle
 * Bernese Mountain Dog
 * Chihuahua
@@ -147,7 +147,7 @@ We have 7 Classes of dogs each with 30 images (available in a .zip file [here](s
 * Golden Retriever
 * Maltese
 
-There is also a set of test images (not for training) in this [.zip folder](sample-images\dogs.zip).
+There is also a set of test images (not for training) in this [.zip folder](sample-images/dogs.zip).
 
 First create a Custom Vision instance in your Azure account. 
 
@@ -162,7 +162,7 @@ First create a Custom Vision instance in your Azure account.
     * Choose the F0 or free tier for your pricing options
     * select the resource group you created previously for this project
     * Click Create
-* ![Custom Vision Blade Details](/docs-images\custom-vision-azure.JPG)
+* ![Custom Vision Blade Details](/docs-images/custom-vision-azure.JPG)
 
 Now we can build our classifier, navigate to [https://www.customvision.ai](https://www.customvision.ai) and choose sign in. Sign in with your Azure credentials account
 
@@ -176,10 +176,10 @@ Once loaded choose 'New Project' which opens a window to enter details
 * Project Types: Classification
 * Classification Types: Multiclass (Single tag per image)
 * Domains: General
-* ![Create Custom Vision Project](docs-images\create-project.JPG)
+* ![Create Custom Vision Project](docs-images/create-project.JPG)
 
 Choose 'Create Project' and you will land on an empty workspace like below
-![Empty Custom Vision Project](docs-images\start-page.JPG)
+![Empty Custom Vision Project](docs-images/start-page.JPG)
 
 Now we can start adding images and assigning them tags to create our image classifier
 
@@ -187,11 +187,11 @@ In the top left, select 'Add images', browse for the first folder of images - Be
 
 Add the tag 'beagle' to the Beagle dog images and select 'Upload 30 files'
 
-![Upload images of dogs](docs-images\add-class-images.JPG)
+![Upload images of dogs](docs-images/add-class-images.JPG)
 
 Once successful you receive a confirmation message and you should see your images are now available in the workspace
 
-![Successful upload](docs-images\upload-successful.JPG)
+![Successful upload](docs-images/upload-successful.JPG)
 
 Now complete the same steps of uploading and tagging images for the other 6 dog categories in the folder. For each type of dog:
 * Click add images
@@ -202,39 +202,39 @@ Now complete the same steps of uploading and tagging images for the other 6 dog 
 
 Now you should have all categories uploaded and on the left hand side you can see your dog classes and you can filter depending on type of dog image
 
-![All images uploaded and tagged](docs-images\all-categories-uploaded.JPG)
+![All images uploaded and tagged](docs-images/all-categories-uploaded.JPG)
 
 Now you are ready to train your algorithm on the dog image data you have uploaded. Select the green 'Train' button in the top right corner
 
 Once the training process is complete you will receive machine learning evaluation metrics for your model
 
-![Evaluation Metrics](docs-images\train-metrics.JPG)
+![Evaluation Metrics](docs-images/train-metrics.JPG)
 
 Now we have a model we need to test the model. Choose the 'Quick Test' button in the top right *(next to the train button)* this will open a window where you can browse for a local image or enter a web URL.
 
 Browse for an image in the test folder (images the model has not been trained on) and upload. The image will be analysed and a result returned of what dog the model thinks it is (prediction tag) and the models confidence of its result (prediction probability)
 
-![Quick Test](docs-images\quick-test.JPG)
+![Quick Test](docs-images/quick-test.JPG)
 
 > Repeat this process for other images in the test folder to see how the model performs
 
 If you click on the 'Predictions' tab on the top toolbar - you should see all the test images you have submitted. This section is for re-training, as you get new data you can add this to your model to improve its performance. The images are ordered by importance - the image, which if classified correctly, will add the most new information to the model is listed first. Whereas the last image might be very similar to other images already learnt by the model so this is less important to classify correctly.
 
-![Re-training](docs-images\retraining.JPG)
+![Re-training](docs-images/retraining.JPG)
 
 To add these images to the model - select the first image, review the results the model provided and then in the 'My Tags' box enter the correct tag and click 'save and close'
 
-![Add Re-training Tag](docs-images\add-tag.JPG)
+![Add Re-training Tag](docs-images/add-tag.JPG)
 
 This image will disappear from the  your predictions workspace and be added to the training images workspace. Once you add a few new images and tags you can re-train the model to see if there are improvements.
 
 To use this within applications you need the prediction details. Go to the performance workspace from the top bar and select Prediction URL
 
-![Prediction URL Location](docs-images\prediction-url-location.JPG)
+![Prediction URL Location](docs-images/prediction-url-location.JPG)
 
 Select this and you have the information you need to create a Postman call to your API (using both an image or an image URL)
 
-![Prediction in Postman](docs-images\postman-custom-vision.JPG)
+![Prediction in Postman](docs-images/postman-custom-vision.JPG)
 
 
 ## Build Custom AI into an Application - Azure Logic Apps and Microsoft PowerApps

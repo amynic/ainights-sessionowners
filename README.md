@@ -210,8 +210,8 @@ First create a Custom Vision instance in your Azure account.
 * Enter details to create
     * a name for the service 
     * select your subscription 
-    * choose you nearest datacenter location
-    * Choose the F0 or free tier for your pricing options
+    * Please choose SOUTH CENTRAL US as the data centre
+    * Choose the S0 tier for your pricing options
     * select the resource group you created previously for this project
     * Click Create
 * ![Custom Vision Blade Details](/docs-images/custom-vision-azure.JPG)
@@ -224,7 +224,7 @@ Once loaded choose 'New Project' which opens a window to enter details
 
 * Name: choose a suitable name
 * Description: add a description of the classifier (example shown in image)
-* Resource Group: choose the resource group you created your custom vision service in
+* Resource Group: choose the resource group you created your custom vision service in (example: ainights[SO])
 * Project Types: Classification
 * Classification Types: Multiclass (Single tag per image)
 * Domains: General

@@ -388,6 +388,60 @@ Put your cursor in the Image URL box and on the right in Dynamic Context find UR
 
 Choose next step
 
+type **for each** and select the grey control step called for each
+Once selected in the output from previous step box, select the box and from Dynamic content select **Predictions**
 
+![For each prediction](docs-images/for-each-prediction-add-action.JPG)
+
+Choose **Add an action**
+
+Search Control, select the control icon and then from the results, select **Condition**
+
+![If Statement](docs-images/if-statement.JPG)
+
+In the Condition box, select choose a value. From Dynamic content find **Prediction Probabilities**
+
+Set the condition to be Prediction Probabilities are greater than 0.7 (as shown below)
+
+![Condition value](docs-images/high-prediction.JPG)
+
+In the **If True** box select **Add an action**
+
+Search for Azure Blob Storage and select the icon for Create Blob
+
+In connection name enter **results** and select your results blob storage account name from the listed options and select create
+
+![Connect to Result Blob Storage](docs-images/result-blob-connection.JPG)
+
+In folder path, select the folder icon, far right, and choose the container name you created that is populated
+
+Select the Blob name field and enter: result-(then from the Dynamic content box select ID)
+
+Under Blob Content, select the field and in the Dynamic Content box on the right, select **see more** under the predict image from URL section. Then select Prediction tag, enter a colon ":" and then select Prediction Probability
+
+![Azure Blob Storage results options](docs-images/blob-content-see-more.JPG)
+
+Finally save the logic app in the top action bar
+
+Once saved, lets test the app for the desired outcome. Select **Run** from the top action bar
+
+![Run Logic App to test](docs-images/run-logic-app.JPG)
+
+Now navigate to your images storage account (easy to find from the resource group section). 
+Choose Blob and select the images container. In there you should see an upload button. Upload one of the images from the Dogs data testset folder
+
+![Upload Blob](docs-images/upload-blob.JPG)
+
+Once uploaded, navigate back to your Logic App main page and review the  runs history section at the bottom of the page. Select the successful run and review the inputs and outputs from the
+
+![Run History](docs-images/logic-app-run-history.JPG)
+
+All sections should have a green tick and you can select each one to view the input and output between the layers (this is also a great way to debug if it doesn't run as expected)
+
+![Logic app run successful](docs-images/explore-logic-app-run.JPG)
+
+Finally navigate to your results blob storage account, select blob, enter the results container and review the file now created there. The contents of the file should show similar to the below - given the dog image input, the predicted class of the dog and also a confidence score
+
+![Result](docs-images/result.JPG)
 
 

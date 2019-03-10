@@ -290,3 +290,104 @@ Select this and you have the information you need to create a Postman call to yo
 
 
 ## Build Custom AI into an Application - Azure Logic Apps
+
+In this section you will build an Azure Logic App to consume your Custom Vision AI dog classification application
+
+First we need to create two Azure Storage Accounts.
+
+Go to the azure portal and click create new resource. Select the section Storage and choose the first option Storage Account.
+
+![Azure Storage Account](docs-images/storage-account.JPG)
+
+We are going to create two storage accounts:
+* one for the images to be dropped into to be processed (called ainightstor)
+* another for the results after processing to be uploaded to (called resultainights)
+
+> Complete the process below **twice** so you have two storage accounts in total
+
+On the storage account creation page enter options to setup your storage account:
+
+* **Subscription:** choose your subscription
+* **Resource Group:** choose the resource group you have been using for this workshop
+* **Storage Account Name:** (must be unique) enter an all lowercase storage account name. *Such as ainightsstor or resultsainights*
+* **Location:** your closest data center
+* **Performance:** Standard
+* **Account Kind:** Blob Storage
+* **Replication:** Locally-redundant storage (LRS)
+* **Access Tier:** Hot
+
+Select **Review + create**, confirm validation is passed and then select **Create**
+
+![Create Azure Storage Account](docs-images/create-storage-account.JPG)
+
+Once your deployment is complete, got to the resource and review the account settings.
+Select **Blobs** to review your empty blob storage account. We need to add a container to the storage account to store our images and results.
+
+Select the **+ Container** button and create a name for the container
+> an example for the **ainightsstor** account would be **images** 
+
+> an example for the **resultsainights** account would be **results** 
+
+For the public access level setting select **Container (anonymous read access for containers and blobs)**
+![Create a container](docs-images/create-stor-container.JPG)
+
+> Complete the above for an image storage account and a results storage account with the same settings
+
+Now we will create a Logic App - this will connect your image storage account to your AI classification service and put the results in your results storage account
+
+On the Azure Portal Homepage, select **Create a Resource**. Type Logic App and select the service
+
+![Logic App](docs-images/logic-app.JPG)
+
+Create the logic app by entering some setup detail like below:
+* **Name:** suitable name for the dog classification application
+* **Subscription:** Choose your subscription
+* **Resource Group:** (use existing) select the resource group you have been working for the whole workshop
+* **Location:** choose the data center closest to you
+* **Log Analytics:** off
+
+Choose **Create**
+
+![Logic App Option](docs-images/create-logic-app.JPG)
+
+Once created, go to resource. From here we can create our logic process. Select **When an Event Grid resource event occurs**
+
+![Logic App Trigger](docs-images/logic-app-trigger.JPG)
+
+Connect to Azure event grid by signing in using your Azure credentials
+
+![Event Grid Sign In](docs-images/event-grid-sign-in.JPG)
+
+Once connected and you see a green tick, select continue.
+
+Select the options below:
+* **Subscription:** your subscription
+* **Resource Type:** Microsoft.Storage.StorageAccounts
+* **Resource Name:** choose your image storage account
+* **Event Type Item - 1:** Microsoft.Storage.BlobCreated
+
+![Event Grid Options](docs-images/event-grid-options.JPG)
+
+Then choose next step. Type **Parse JSON** and select the parse JSON operator as part of the data Data Operations category
+
+* **Content:** select the box and from the Dynamic Content box on the right, select **Body**
+* **Schema:** select this box and enter the JSON schema provided in the [logic-app-schema file](sample-code/logic-app-demo/logic-app-schema.txt)
+
+![Parse JSON](docs-images/parse-json.JPG)
+
+Then choose next step. Type Custom Vision and select the option at the top and then select **Predict tags from image URL(Preview)**
+
+Enter a name for the connection (example: customvisionconnection) and enter the prediction key from the Custom Vision service dog classification project
+
+![Custom Vision Connection](docs-images/custom-vision-connection.JPG)
+
+On the next view, enter the Project ID from the custom Vision dog classification project
+Put your cursor in the Image URL box and on the right in Dynamic Context find URL and select it
+
+![get URL to predict](docs-images/get-url-to-predict.JPG)
+
+Choose next step
+
+
+
+

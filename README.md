@@ -36,7 +36,7 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 ## Microsoft Azure Cognitive Services - Computer Vision and Text Analytics
 
 First show the Microsoft Azure Cognitive Services in their simplest format - within the web browser. 
-** Navigate to [https://azure.microsoft.com/en-gb/services/cognitive-services/](https://azure.microsoft.com/en-gb/services/cognitive-services/)**
+**Navigate to [https://azure.microsoft.com/en-gb/services/cognitive-services/](https://azure.microsoft.com/en-gb/services/cognitive-services/)**
 
 Talk through the options from Vision, Speech, Language, Knowledge and Search very briefly
 

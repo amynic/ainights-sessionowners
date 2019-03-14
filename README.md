@@ -9,7 +9,7 @@ This is a GitHub repository provided for **session owners** to access and learn 
 **Session Abstract:** In this workshop you will be introduced to the [Microsoft Azure Cognitive Services](https://azure.microsoft.com/en-gb/services/cognitive-services/), a range of offerings you can use to infuse intelligence and machine learning into your applications without needing to build the code from scratch. 
 We will cover pre-trained AI APIs, such as [computer vision](https://azure.microsoft.com/en-gb/services/cognitive-services/directory/vision/) and [text analytics](https://azure.microsoft.com/en-gb/services/cognitive-services/directory/lang/), that are accessed by REST protocol. Then look at how you can host these [models in containers](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-container-support), giving you the ability to run Cognitive Services offline and on edge devices. Finally we will dive into Custom AI that uses transfer learning - [Microsoft Azure Custom Vision](https://azure.microsoft.com/en-gb/services/cognitive-services/custom-vision-service/). This enables you to provide a small amount of your own data to train an image classification model. Wrapping the workshop up by building our custom trained AI into an application - using [Logic Apps](https://azure.microsoft.com/en-gb/services/logic-apps/), this technology is ideal for proof of concepts within machine learning
 
-**PowerPoint Slides available here:** [Creating applications that can see, hear, speak or understand - using Microsoft Cognitive Services]()
+**PowerPoint Slides available here:** [Creating applications that can see, hear, speak or understand - using Microsoft Cognitive Services](ai-nights-beginner.pptx)
 
 
 ## Pre-requisites for your machine
@@ -26,8 +26,7 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 
 * **30 mins** - Computer Vision + Text Analytics API *(attendees - try it yourself)* [Go to Section](#microsoft-azure-cognitive-services---computer-vision-and-text-analytics)
 * **15 mins** - Container support for those APIs *(demonstration by speaker only)* [Go to Section](#microsoft-azure-cognitive-services---text-analytics-in-a-container)
-* **5 mins** - Custom AI Options - what is transfer learning?
-* **30 mins** - Custom models using Transfer Learning - Classification + Object Detection *(attendees - try it yourself)* [Go to Section](#microsoft-azure-cognitive-services---custom-vision-demo)
+* **40 mins** - Custom models using Transfer Learning - Classification + Object Detection *(attendees - try it yourself)* [Go to Section](#microsoft-azure-cognitive-services---custom-vision-demo)
 * **35 mins** - Build this sample into an app using Logic apps *(attendees - try it yourself)* [Go to Section](#build-custom-ai-into-an-application---azure-logic-apps)
 * **5 mins** - Useful links to share and finish
 

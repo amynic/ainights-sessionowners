@@ -279,7 +279,7 @@ To add these images to the model - select the first image, review the results th
 
 This image will disappear from the  your predictions workspace and be added to the training images workspace. Once you add a few new images and tags you can re-train the model to see if there are improvements.
 
-To use this within applications you need the prediction details. Go to the performance workspace from the top bar and select Prediction URL
+To use this within applications you need the prediction details. Go to the performance workspace from the top bar. You must publish it before getting the Prediction URL. Click the 'Publish' button, then input the 'Publish name', and click 'Publish'. Now the 'Prediction URL' button is available.
 
 ![Prediction URL Location](docs-images/prediction-url-location.JPG)
 

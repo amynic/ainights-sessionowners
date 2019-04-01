@@ -279,13 +279,16 @@ To add these images to the model - select the first image, review the results th
 
 This image will disappear from the  your predictions workspace and be added to the training images workspace. Once you add a few new images and tags you can re-train the model to see if there are improvements.
 
-To use this within applications you need the prediction details. Go to the performance workspace from the top bar and select Prediction URL
+To use this within applications you need the prediction details. Go to the performance tab from the top bar and choose **Publish** to make your predicition API available. Next give this published iteration a name
 
-![Prediction URL Location](docs-images/prediction-url-location.JPG)
 
-Select this and you have the information you need to create a Postman call to your API (using both an image or an image URL)
+![Prediction URL Location](docs-images/custom-vision-publish.JPG)
 
-![Prediction in Postman](docs-images/postman-custom-vision.JPG)
+![Prediction URL Name](docs-images/custom-vision-publish-name.JPG)
+
+Once complete select the **Prediction URL** button to find all the information you need to create a Postman call to your API (using both an image or an image URL)
+
+![Prediction in Postman](docs-images/custom-vision-newpredictionurl.JPG)
 
 
 ## Build Custom AI into an Application - Azure Logic Apps

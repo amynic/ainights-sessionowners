@@ -373,39 +373,55 @@ Select the options below:
 Then choose next step. Type **Parse JSON** and select the parse JSON operator as part of the data Data Operations category
 
 * **Content:** select the box and from the Dynamic Content box on the right, select **Body**
-* **Schema:** select this box and enter the JSON schema provided in the [logic-app-schema file](sample-code/logic-app-demo/logic-app-schema.txt)
+* **Schema:** select this box and enter the JSON schema provided in the [logic-app-schema1 file](sample-code/logic-app-demo/logic-app-schema1.json)
 
 ![Parse JSON](docs-images/parse-json.JPG)
 
-Then choose next step. Type Custom Vision and select the option at the top and then select **Predict tags from image URL(Preview)**
+Then choose next step. Type **HTTP** and select the HTTP option as below
 
-Enter a name for the connection (example: customvisionconnection) and enter the prediction key from the Custom Vision service dog classification project
+![HTTP Connection](docs-images/http-connector.JPG)
 
-![Custom Vision Connection](docs-images/custom-vision-connection.JPG)
+Now we need to fill in the details of the REST API request - similar to using Postman App.
 
-On the next view, enter the Project ID from the custom Vision dog classification project
-Put your cursor in the Image URL box and on the right in Dynamic Context find URL and select it
+* Method: POST
+* URI: enter Prediction URL from Custom Vision Service
+* Headers:
+    * "Prediction-Key" : enter your prediction key from the custom vision service
+    * "Content-Type" : "application/json"
+* Queries: enter nothing
+* Body: {"Url": "REPLACE WITH DYNAMIC CONTENT URL"}
 
-![get URL to predict](docs-images/get-url-to-predict.JPG)
+![HTTP info](docs-images/http-request.JPG)
+
+Choose next step
+
+Then choose next step. Type **Parse JSON** and select the parse JSON operator again as part of the data Data Operations category
+
+* **Content:** select the box and from the Dynamic Content box on the right, select **Body**
+* **Schema:** select this box and enter the JSON schema provided in the [logic-app-schema2 file](sample-code/logic-app-demo/logic-app-schema2.json) 
+
+> the difference between the two parse JSON is, the first one parses the event grid response about the blob storage image URL, the second one parses the JSON from the custom vision service API call return
+
+![Parse JSON](docs-images/parse-json-2.JPG)
 
 Choose next step
 
 type **for each** and select the grey control step called for each
-Once selected in the output from previous step box, select the box and from Dynamic content select **Predictions**
+Once selected in the output from previous step box, select the box and from Dynamic content select **predictions** from the Parse JSON 2 category
 
-![For each prediction](docs-images/for-each-prediction-add-action.JPG)
+![For each prediction](docs-images/for-each-prediction.JPG)
 
 Choose **Add an action**
 
 Search Control, select the control icon and then from the results, select **Condition**
 
-![If Statement](docs-images/if-statement.JPG)
+![If Statement](docs-images/control-condition.JPG)
 
-In the Condition box, select choose a value. From Dynamic content find **Prediction Probabilities**
+In the Condition box, select choose a value. From Dynamic content find Parse Json 2 and then **probability**
 
-Set the condition to be Prediction Probabilities are greater than 0.7 (as shown below)
+Set the condition to be probability greater than 0.7 (as shown below)
 
-![Condition value](docs-images/high-prediction.JPG)
+![Condition value](docs-images/probability.JPG)
 
 In the **If True** box select **Add an action**
 
@@ -417,11 +433,11 @@ In connection name enter **results** and select your results blob storage accoun
 
 In folder path, select the folder icon, far right, and choose the container name you created that is populated
 
-Select the Blob name field and enter: result-(then from the Dynamic content box select ID)
+Select the Blob name field and enter: result-(then from the Dynamic content box under Parse Json (1) select **id**)
 
-Under Blob Content, select the field and in the Dynamic Content box on the right, select **see more** under the predict image from URL section. Then select Prediction tag, enter a colon ":" and then select Prediction Probability
+Under Blob Content, select the field and in the Dynamic Content box on the right, select **see more** under the Parse Json 2 section. Then select **tagName**, enter a colon ":" and then select **probability**
 
-![Azure Blob Storage results options](docs-images/blob-content-see-more.JPG)
+![Azure Blob Storage results options](docs-images/create-blob-connector.JPG)
 
 Finally save the logic app in the top action bar
 

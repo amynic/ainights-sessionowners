@@ -1,15 +1,17 @@
 # AI Nights Content - Beginner Track
 ## For Session Owners - Train the Trainer
 
-This is a GitHub repository provided for **session owners** to access and learn content that can be delivered at **AI Nights** across the globe in **April and September**. This content is designed for the **Beginner Track** and is approx **2 hours worth** of content. Some elements of the workshops are for the speakers to demo and other elements are for attendees to complete on their own devices and with their own Azure Subscription. Please find the public workshop content for attendees here:  [https://github.com/amynic/AINights](https://github.com/amynic/AINights)
+This is a GitHub repository provided for **session owners** to access and learn content that can be delivered at **AI Nights** across the globe in **April and September**. This content is designed for the **Beginner Track** and is approx **1 hours worth** of content ([This can be followed by the Azure Machine Learning Service Visual Interface content]()). Some elements of the workshops are for the speakers to demo and other elements are for attendees to complete on their own devices and with their own Azure Subscription. Please find the public workshop content for attendees here:  [https://github.com/amynic/AINights](https://github.com/amynic/AINights)
 
 ## Session Information 
 **Session Title:** Creating applications that can see, hear, speak or understand - using Microsoft Cognitive Services
 
 **Session Abstract:** In this workshop you will be introduced to the [Microsoft Azure Cognitive Services](https://azure.microsoft.com/en-gb/services/cognitive-services/?WT.mc_id=ainights-github-amynic), a range of offerings you can use to infuse intelligence and machine learning into your applications without needing to build the code from scratch. 
-We will cover pre-trained AI APIs, such as [computer vision](https://azure.microsoft.com/en-gb/services/cognitive-services/directory/vision/?WT.mc_id=ainights-github-amynic) and [text analytics](https://azure.microsoft.com/en-gb/services/cognitive-services/directory/lang/?WT.mc_id=ainights-github-amynic), that are accessed by REST protocol. Then look at how you can host these [models in containers](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-container-support/?WT.mc_id=ainights-github-amynic), giving you the ability to run Cognitive Services offline and on edge devices. Finally we will dive into Custom AI that uses transfer learning - [Microsoft Azure Custom Vision](https://azure.microsoft.com/en-gb/services/cognitive-services/custom-vision-service/?WT.mc_id=ainights-github-amynic). This enables you to provide a small amount of your own data to train an image classification model. Wrapping the workshop up by building our custom trained AI into an application - using [Logic Apps](https://azure.microsoft.com/en-gb/services/logic-apps/?WT.mc_id=ainights-github-amynic), this technology is ideal for proof of concepts within machine learning
+We will cover pre-trained AI APIs, such as [computer vision](https://azure.microsoft.com/en-gb/services/cognitive-services/directory/vision/?WT.mc_id=ainights-github-amynic) and [text analytics](https://azure.microsoft.com/en-gb/services/cognitive-services/directory/lang/?WT.mc_id=ainights-github-amynic), that are accessed by REST protocol. Finally we will dive into Custom AI that uses transfer learning - [Microsoft Azure Custom Vision](https://azure.microsoft.com/en-gb/services/cognitive-services/custom-vision-service/?WT.mc_id=ainights-github-amynic). This enables you to provide a small amount of your own data to train an image classification model. Wrapping the workshop up by building our custom trained AI into an application - using [Logic Apps](https://azure.microsoft.com/en-gb/services/logic-apps/?WT.mc_id=ainights-github-amynic), this technology is ideal for proof of concepts within machine learning
 
 **PowerPoint Slides available here:** [Creating applications that can see, hear, speak or understand - using Microsoft Cognitive Services](ai-nights-beginner.pptx)
+
+> When you see **[BONUS SECTION]** in this content it means it is not designed for the 1 hour slot for the Cognitive Services within the beginner track, however if you wish to customise your session or learn about other parts of the Cognitive services you can us this content
 
 
 ## Pre-requisites for your machine
@@ -17,18 +19,18 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 * [Microsoft Azure Subscription](https://azure.microsoft.com/en-gb/free/?WT.mc_id=ainights-github-amynic)
 * Laptop with a modern web browser (Google Chrome, Microsoft Edge)
 * [Postman, API Development Environment - available on Windows, Linux and macOS](https://www.getpostman.com/downloads/)
-* [Download docker for your local machine - available on Windows, Linux and macOS](https://docs.docker.com/docker-for-windows/)
+* **[BONUS SECTION]** [Download docker for your local machine - available on Windows, Linux and macOS](https://docs.docker.com/docker-for-windows/)
 
 > *All demos and content have been tested on a Windows PC, however all options should run from macOS and Linux machines as well. Please provide information via an issue or pull request if you have feedback on other operating systems*  
 
 
 ## Session Timings
 
-* **30 mins** - Computer Vision + Text Analytics API *(attendees - try it yourself)* [Go to Section](#microsoft-azure-cognitive-services---computer-vision-and-text-analytics)
-* **15 mins** - Container support for those APIs *(demonstration by speaker only)* [Go to Section](#microsoft-azure-cognitive-services---text-analytics-in-a-container)
-* **40 mins** - Custom models using Transfer Learning - Classification + Object Detection *(attendees - try it yourself)* [Go to Section](#microsoft-azure-cognitive-services---custom-vision-demo)
-* **35 mins** - Build this sample into an app using Logic apps *(attendees - try it yourself)* [Go to Section](#build-custom-ai-into-an-application---azure-logic-apps)
-* **5 mins** - Useful links to share and finish
+* **6 min** - Introduction to AI and resources needed
+* **11 mins** - Computer Vision + Text Analytics API *(demonstration by speaker only)* [Go to Section](#microsoft-azure-cognitive-services---computer-vision-and-text-analytics)
+* **18 mins** - Custom models using Transfer Learning - Classification + Object Detection *(attendees - try it yourself)* [Go to Section](#microsoft-azure-cognitive-services---custom-vision-demo)
+* **23 mins** - Build this sample into an app using Logic apps *(attendees - try it yourself)* [Go to Section](#build-custom-ai-into-an-application---azure-logic-apps)
+* **2 mins** - Useful links to share and finish
 
 
 ## Content Walk-through
@@ -124,7 +126,7 @@ You can also try other options from the REST API - such as KeyPhrases function. 
 
 > If you have any issues running Postman, API Development Environment you can always run the REST API requests within the API docs for [sentiment analysis](https://northeurope.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9/?WT.mc_id=ainights-github-amynic) and [key phrase extraction](https://northeurope.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6/?WT.mc_id=ainights-github-amynic). Select the data centre you are using and then enter your key in the box provided along with the sample body sample used in Postman
 
-## Microsoft Azure Cognitive Services - Text Analytics in a Container
+## **[BONUS SECTION]** Microsoft Azure Cognitive Services - Text Analytics in a Container
 
 Demo based on the Azure Documentation: [Install and run Text Analytics containers](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-install-containers/?WT.mc_id=ainights-github-amynic)
 
@@ -290,6 +292,7 @@ Once complete select the **Prediction URL** button to find all the information y
 
 ![Prediction in Postman](docs-images/custom-vision-newpredictionurl.JPG)
 
+**Great work!** you have created your specialised dog classification model using the Azure Custom Vision Service
 
 ## Build Custom AI into an Application - Azure Logic Apps
 

@@ -300,7 +300,7 @@ In this section you will build an Azure Logic App to consume your Custom Vision 
 
 First we need to create two Azure Storage Accounts.
 
-Go to the azure portal and click create new resource. Select the section Storage and choose the first option Storage Account.
+Go to the azure portal and click create new resource in the top left corner. Select the section Storage and choose the first option Storage Account.
 
 ![Azure Storage Account](docs-images/storage-account.JPG)
 
@@ -310,11 +310,11 @@ We are going to create two storage accounts:
 
 > Complete the process below **twice** so you have two storage accounts in total
 
-On the storage account creation page enter options to setup your storage account:
+On the storage account creation page enter options to setup your storage account:s
 
 * **Subscription:** choose your subscription
-* **Resource Group:** choose the resource group you have been using for this workshop
-* **Storage Account Name:** (must be unique) enter an all lowercase storage account name. *Such as ainightsstor or resultsainights*
+* **Resource Group:** choose the resource group you have been using for this workshop (e.g. ainights)
+* **Storage Account Name:** (must be unique) enter an all lowercase storage account name. *Such as ainightsstor(yourname) or resultsainights(yourname) - append your name to the end of the storage account name so you know its unique (remove the brackets)*
 * **Location:** your closest data center
 * **Performance:** Standard
 * **Account Kind:** Blob Storage
@@ -326,7 +326,10 @@ Select **Review + create**, confirm validation is passed and then select **Creat
 ![Create Azure Storage Account](docs-images/create-storage-account.JPG)
 
 Once your deployment is complete, got to the resource and review the account settings.
-Select **Blobs** to review your empty blob storage account. We need to add a container to the storage account to store our images and results.
+Select **Blobs** to review your empty blob storage account.
+
+![Select Blob Storage Account](docs-images/select-blobs.JPG)
+We need to add a container to the storage account to store our images and results.
 
 Select the **+ Container** button and create a name for the container
 > an example for the **ainightsstor** account would be **images** 
@@ -359,7 +362,7 @@ Once registered with a green tick - go back to the Azure Portal Homepage. Select
 Create the logic app by entering some setup detail like below:
 * **Name:** suitable name for the dog classification application
 * **Subscription:** Choose your subscription
-* **Resource Group:** (use existing) select the resource group you have been working for the whole workshop
+* **Resource Group:** (use existing e.g. ainights) select the resource group you have been working for the whole workshop
 * **Location:** choose the data center closest to you
 * **Log Analytics:** off
 
@@ -367,7 +370,7 @@ Choose **Create**
 
 ![Logic App Option](docs-images/create-logic-app.JPG)
 
-Once created, go to resource. From here we can create our logic process. Select **When an Event Grid resource event occurs**
+Once created, go to resource. From here we can create our logic process. Select **Logic app designer** from the left menu and then the  **When an Event Grid resource event occurs** option
 
 ![Logic App Trigger](docs-images/logic-app-trigger.JPG)
 
@@ -380,7 +383,7 @@ Once connected and you see a green tick, select continue.
 Select the options below:
 * **Subscription:** your subscription
 * **Resource Type:** Microsoft.Storage.StorageAccounts
-* **Resource Name:** choose your image storage account
+* **Resource Name:** choose your image storage account (e.g. ainightsstor)
 * **Event Type Item - 1:** Microsoft.Storage.BlobCreated
 
 ![Event Grid Options](docs-images/event-grid-options.JPG)
@@ -388,53 +391,44 @@ Select the options below:
 Then choose next step. Type **Parse JSON** and select the parse JSON operator as part of the data Data Operations category
 
 * **Content:** select the box and from the Dynamic Content box on the right, select **Body**
-* **Schema:** select this box and enter the JSON schema provided in the [logic-app-schema1 file](sample-code/logic-app-demo/logic-app-schema1.json)
+* **Schema:** select this box and enter the JSON schema provided in the [logic-app-schema1 file](sample-code/logic-app-task/logic-app-schema1.json)
 
 ![Parse JSON](docs-images/parse-json.JPG)
 
-Then choose next step. Type **HTTP** and select the HTTP option as below
+Then choose next step. Type **custom vision** and select the **Predict tags from image URL (preview)** as below
 
-![HTTP Connection](docs-images/http-connector.JPG)
+![Custom vision - predict image url](docs-images/predict-image-url.JPG)
 
-Now we need to fill in the details of the REST API request - similar to using Postman App.
+Now we need to fill in the details of the custom vision process
 
-* Method: POST
-* URI: enter Prediction URL from Custom Vision Service
-* Headers:
-    * "Prediction-Key" : enter your prediction key from the custom vision service
-    * "Content-Type" : "application/json"
-* Queries: enter nothing
-* Body: {"Url": "REPLACE WITH DYNAMIC CONTENT URL"}
+* **Project ID:** Find the project ID from the settings logo in the top right of the Custom Vision webpage
+    * ![Find Custom Vision Project ID](docs-images/find-project-id.JPG)
+* **Image URL:** select the input box and on the right side select URL from Parse JSON outputs
+    * ![Get URL for image](docs-images/get-url-to-predict.JPG)
+* **Add New Parameter:** 
+    * Select **Add New Parameter** drop down box
+    * select the Iteration ID parameter box
+    * ![Add Iteration ID](docs-images/add-iteration-id.JPG)
+    * Once selected, type **Iteration1** or your training iteration number in the box
+    * ![Add Iteration 1](docs-images/iteration1.JPG)
 
-![HTTP info](docs-images/http-request.JPG)
-
-Choose next step
-
-Then choose next step. Type **Parse JSON** and select the parse JSON operator again as part of the data Data Operations category
-
-* **Content:** select the box and from the Dynamic Content box on the right, select **Body**
-* **Schema:** select this box and enter the JSON schema provided in the [logic-app-schema2 file](sample-code/logic-app-demo/logic-app-schema2.json) 
-
-> the difference between the two parse JSON is, the first one parses the event grid response about the blob storage image URL, the second one parses the JSON from the custom vision service API call return
-
-![Parse JSON](docs-images/parse-json-2.JPG)
 
 Choose next step
 
 type **for each** and select the grey control step called for each
 Once selected in the output from previous step box, select the box and from Dynamic content select **predictions** from the Parse JSON 2 category
 
-![For each prediction](docs-images/for-each-prediction.JPG)
+![For each prediction](docs-images/for-each-prediction-add-action.JPG)
 
 Choose **Add an action**
 
 Search Control, select the control icon and then from the results, select **Condition**
 
-![If Statement](docs-images/control-condition.JPG)
+![If Statement](docs-images/if-statement.JPG)
 
-In the Condition box, select choose a value. From Dynamic content find Parse Json 2 and then **probability**
+In the Condition box, select choose a value. From Dynamic content find 'Predict Tags from Image URL' and then **Probability**
 
-Set the condition to be probability greater than 0.7 (as shown below)
+Set the condition to be **Prediction Probability** greater than 0.7 (as shown below)
 
 ![Condition value](docs-images/probability.JPG)
 
@@ -476,5 +470,175 @@ All sections should have a green tick and you can select each one to view the in
 Finally navigate to your results blob storage account, select blob, enter the results container and review the file now created there. The contents of the file should show similar to the below - given the dog image input, the predicted class of the dog and also a confidence score
 
 ![Result](docs-images/result.JPG)
+
+# **[BONUS SECTION]** Microsoft Power Apps
+## Creating a front end application to take a picture of a dog and analyse it
+
+> NOTE: you must use your organizational account to use PowerApps. As this may become an issue 
+
+Navigate to: [https://powerapps.microsoft.com/en-us/?WT.mc_id=build2019-event-amynic](https://powerapps.microsoft.com/en-us/) and sign in with your organizational account.
+
+This will take you to the PowerApps main menu screen. Select the **Canvas App from Blank** button
+
+![PowerApps main menu](docs-images/powerapps-main-menu.JPG)
+
+Provide an App Name, **example: Dog Spotter** and in this case select **Format:Phone**
+
+![PowerApps Create Canvas App](docs-images/powerapps-create-canvas-app.JPG)
+
+This will load a screen like shown below. With a user interface for you to start building your application using the click-and-drag interface.
+
+![PowerApps Blank App](docs-images/powerapps-blank-app.JPG)
+
+To start building our app we are going to need to insert some functionality. You will find the **insert** menu at the top of the page like below
+
+![PowerApps Insert Tab](docs-images/powerapps-insert-tab.JPG)
+
+First we are going to insert **Camera** functionality. Under the insert tab select the **Media** dropdown and select the **Camera** option
+
+![PowerApps Insert Camera](docs-images/powerapps-insert-camera.JPG)
+
+Position the camera in good place on the page and you will see a properties pane appear on the right side of the page
+
+Choose the **Advanced** tab from the properties pane. Under **Action** and **OnSelect** insert
+
+``` Collect(myPics, Camera1.Photo) ```
+
+![PowerApps Camera Logic](docs-images/powerapps-camera-logic.JPG)
+
+Next we are going to insert a title for the application. Go to the **insert** tab and select the **Text** dropdown menu. Under this menu select **Label**
+
+![PowerApps Insert Title](docs-images/powerapps-insert-title.JPG)
+
+Place the Title at the top of the page. Under the properties pane on the right update the options below:
+* **Text:** Dog Spotter (or another application name you would like)
+* **Font Size:** 60
+* **Text Alignment:** Center
+
+> Making other changes on the properties pane will change the look and information within your app. Please investigate the options available to you. In this tutorial we will only look at a few
+
+![PowerApps Title Information](docs-images/powerapps-title-info.JPG)
+
+Now we are going to insert a **Photo Gallery**. When a photo is taken it will appear in the app at the bottom of the page.
+
+Go to the **Insert** tab and select **Gallery**. Choose the **Horizontal** option and position the item on the page below the camera
+
+![PowerApps Insert Gallery](docs-images/powerapps-insert-gallery.JPG)
+
+In order for the application to know which pictures to use we reuse the **myPics** variable we created in the Camera setup
+
+On the properties pane, select **myPics** from the **Items** dropdown menu
+
+![PowerApps Collection Images Setup](docs-images/powerapps-collection-images.JPG)
+
+Now select a single image slot from the gallery and on the properties pane select the **Advanced** tab. Complete the code below for the correct fields:
+
+* OnSelect: ``` Remove(myPics, ThisItem) ```
+* Image: ``` ThisItem.Url ```
+
+![PowerApps Remove Images Setup](docs-images/powerapps-remove-image.JPG)
+
+Next we add a **Text Input** box from the **Text** menu on the insert tab. This box will allow us to give our image a name when we send it to Azure Blob Storage.
+
+![PowerApps Insert Text Input](docs-images/powerapps-insert-text-input.JPG)
+
+Align the **Text Input** box underneath the Camera and above the Image gallery
+
+Finally add a **Button** to the page. This cna be found underneath the **Insert -> Controls -> Button** options
+
+Place the button next to the text input box underneath the Camera
+
+![PowerApps Insert Button](docs-images/powerapps-insert-button.JPG)
+
+On the properties pane for the button change the **Text** field to **Send**
+
+![PowerApps Button Properties](docs-images/powerapps-button-properties.JPG)
+
+Now we need to add Azure Blob Storage as our data source. This will mean we can send the image taken by the camera in the app to storage and this will trigger our Logic app
+
+Go to **View** in the main toolbar, then **Data Sources**. This will open a pane on the right where you can click **Add Data Source**
+
+![PowerApps Add Data Source](docs-images/powerapps-add-datasource.JPG)
+
+Select **New Connection** and search for **blob** in the search box. Then click the Azure Blob Storage option
+
+![PowerApps Add Data Source setup connection](docs-images/powerapps-datasource-setup.JPG)
+
+Insert the connection information for your Azure Blob Storage account you used in the Logic App scenario: example ainightsstor.
+
+![PowerApps Add Data Source setup connection](docs-images/PowerApps-azure-blob-storage-connection.JPG)
+
+Once authenticated you will then see your blob storage connection added to the connections pane
+
+![PowerApps Data Added](docs-images/powerapps-data-added.JPG)
+
+Now we can use this connection in a function. Click on the **Send** button and switch to the **Advanced** pane.
+
+In the OnSelect box type: 
+ ``` AzureBlobStorage.CreateFile("images", TextInput1.Text, Camera1.Photo) ```
+
+
+![PowerApps Azure Blob Function](docs-images/powerapps-function.JPG)
+
+
+Now we have built an app lets test it in our development environment. In the top right of the screen you will see the toolbar below - press the **Play** button highlighted. This will open a new window with your application running. This will ask for access to your camera to test the app
+
+![PowerApps Preview your app](docs-images/powerapps-preview-app.JPG)
+
+> Test you app by taking a picture of a dog (or anything at this point). The camera will take a picture - name it - click the send button. Once sent wait a moment and you should recieve an email as your Logic app will have triggered
+
+![PowerApps Preview your app](docs-images/powerapps-preview-running.JPG)
+
+Now we are going to **Save** and **Publish** the application so you can use it on your mobile device
+
+Go to the **File** tab in to top toolbar and choose the option on the left pane **Save**. Then click the **save** button.
+
+Once saved you will have the **Publish** button appear - select this
+
+![PowerApps Publish](docs-images/powerapps-publish.JPG)
+
+![PowerApps save](docs-images/powerapps-saved.JPG)
+
+You can also edit the look of the icon for the application. In the **File** menu go to **App Settings**.
+
+In **App Name and Icon** select a background color for your application and choose an icon. You can also upload you own. Why not add a dog icon? Download the icon from [here](sample-code/dog-icon.png) and choose the **browse** button to add your own icon
+
+![PowerApps Change App Settings](docs-images/powerapps-app-settings.JPG)
+
+In order to view your published app on your phone you will need to download the PowerApps app from your app store. 
+
+> For this tutorial the instructions will be for IOS.
+
+![PowerApps IPhone download](docs-images/powerapps-download.png)
+
+Once the app is download. Open the application and log in with your organizational credentials. Once logged in you should see all your organizations apps listed
+
+![PowerApps apps listed on phone](docs-images\PowerApps-in-PowerApps-on-phone.png)
+
+For you Dog Spotter app we want to add it to your home screen like any other application. Click on the 3 dots (...) and select **pin to home**
+
+![PowerApps Pin to home screen](docs-images/powerapps-pin-app.png)
+
+This will open the web browser where you follow the instructions to add it to your home screen. Select the share button.
+
+![PowerApps add to home screen](docs-images/powerapps-add-to-homescreen.png)
+
+Select **Add to Home Screen**
+
+![PowerApps add to home screen using IOS functionality](docs-images/powerapps-add-to-homescreen-button.png)
+
+Provide your application useful name to be shown on your phone and select Add
+
+![PowerApps Home Screen Details](docs-images/powerapps-homescreen-detail.png)
+
+## Congratulations!! 
+
+The app is now added to your phone home screen and you can open and run the functionality.
+
+Test the app by taking a picture of a dog and sending it to the cloud.
+
+I am really keen to hear your feedback, thoughts and see the outcomes you create from this tutorial. 
+Find me on Twitter: [@AmyKateNicho](https://twitter.com/AmyKateNicho) and LinkedIn: [https://www.linkedin.com/in/amykatenicho/](https://www.linkedin.com/in/amykatenicho/)
+
 
 

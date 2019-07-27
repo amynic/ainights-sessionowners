@@ -394,7 +394,7 @@ Select the options below:
 Then choose next step. Type **Parse JSON** and select the parse JSON operator as part of the data Data Operations category
 
 * **Content:** select the box and from the Dynamic Content box on the right, select **Body**
-* **Schema:** select this box and enter the JSON schema provided in the [logic-app-schema1 file](sample-code/logic-app-task/logic-app-schema1.json)
+* **Schema:** select this box and enter the JSON schema provided in the [logic-app-schema1 file](sample-code/logic-app-demo/logic-app-schema1.json)
 
 ![Parse JSON](docs-images/parse-json.JPG)
 

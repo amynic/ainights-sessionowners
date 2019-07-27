@@ -406,14 +406,11 @@ Now we need to fill in the details of the custom vision process
 
 * **Project ID:** Find the project ID from the settings logo in the top right of the Custom Vision webpage
     * ![Find Custom Vision Project ID](docs-images/find-project-id.JPG)
+* **Published Name: ** You can find the published name from the performance tab in the Custom Vision service
+    * * ![Find Custom Vision Project ID](docs-images/find-published-name.JPG)
 * **Image URL:** select the input box and on the right side select URL from Parse JSON outputs
     * ![Get URL for image](docs-images/get-url-to-predict.JPG)
-* **Add New Parameter:** 
-    * Select **Add New Parameter** drop down box
-    * select the Iteration ID parameter box
-    * ![Add Iteration ID](docs-images/add-iteration-id.JPG)
-    * Once selected, type **Iteration1** or your training iteration number in the box
-    * ![Add Iteration 1](docs-images/iteration1.JPG)
+
 
 
 Choose next step
@@ -431,7 +428,7 @@ Search Control, select the control icon and then from the results, select **Cond
 
 In the Condition box, select choose a value. From Dynamic content find 'Predict Tags from Image URL' and then **Probability**
 
-Set the condition to be **Prediction Probability** greater than 0.7 (as shown below)
+Set the condition to be **Predictions Probability** greater than 0.7 (as shown below)
 
 ![Condition value](docs-images/probability.JPG)
 

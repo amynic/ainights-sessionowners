@@ -1,29 +1,32 @@
+
 # AI Nights Content - Beginner Track
+
 ## For Session Owners - Train the Trainer
 
-This is a GitHub repository provided for **session owners** to access and learn content that can be delivered at **AI Nights** across the globe in **April and September**. This content is designed for the **Beginner Track** and is approx **1 hours worth** of content ([This can be followed by the Azure Machine Learning Service Visual Interface content](https://github.com/GlobalAICommunity/GlobalAINight-September-2019#part-2---is-that-wine-good-or-bad-a-beginner-tutorial-on-how-to-build-a-binary-classification-machine-learning-model-with-no-code-using-azure-machine-learning-visual-interface-1-hour)). Some elements of the workshops are for the speakers to demo and other elements are for attendees to complete on their own devices and with their own Azure Subscription. Please find the public workshop content for attendees here:  [https://github.com/amynic/AINights](https://github.com/amynic/AINights)
+This GitHub repository is provided for **session owners** to access and learn content that can be delivered at **AI Nights** across the globe in **April and September**. This content is designed for the **Beginner Track** and is approx **1 hours worth** of content ([This can be followed by the Azure Machine Learning Service Visual Interface content](https://github.com/GlobalAICommunity/GlobalAINight-September-2019#part-2---is-that-wine-good-or-bad-a-beginner-tutorial-on-how-to-build-a-binary-classification-machine-learning-model-with-no-code-using-azure-machine-learning-visual-interface-1-hour)). Some elements of the workshops are for the speakers to demo and other elements are for attendees to complete on their own devices and with their own Azure Subscription. Please find the public workshop content for attendees here:  [https://github.com/amynic/AINights](https://github.com/amynic/AINights)
 
-## Session Information 
+## Session Information
+
 **Session Title:** Creating applications that can see, hear, speak or understand - using Microsoft Cognitive Services
 
-**Session Abstract:** In this workshop you will be introduced to the [Microsoft Azure Cognitive Services](https://azure.microsoft.com/en-gb/services/cognitive-services/?WT.mc_id=ainights-github-amynic), a range of offerings you can use to infuse intelligence and machine learning into your applications without needing to build the code from scratch. 
+**Session Abstract:** In this workshop you will be introduced to the [Microsoft Azure Cognitive Services](https://azure.microsoft.com/en-gb/services/cognitive-services/?WT.mc_id=ainights-github-amynic), a range of offerings you can use to infuse intelligence and machine learning into your applications without needing to build the code from scratch.
 We will cover pre-trained AI APIs, such as [computer vision](https://azure.microsoft.com/en-gb/services/cognitive-services/directory/vision/?WT.mc_id=ainights-github-amynic) and [text analytics](https://azure.microsoft.com/en-gb/services/cognitive-services/directory/lang/?WT.mc_id=ainights-github-amynic), that are accessed by REST protocol. nEXT we will dive into Custom AI that uses transfer learning - [Microsoft Azure Custom Vision](https://azure.microsoft.com/en-gb/services/cognitive-services/custom-vision-service/?WT.mc_id=ainights-github-amynic). This enables you to provide a small amount of your own data to train an image classification model. Wrapping the workshop up by building our custom trained AI into an application - using [Logic Apps](https://azure.microsoft.com/en-gb/services/logic-apps/?WT.mc_id=ainights-github-amynic), this technology is ideal for building data pipeline processes that work with your machine learning models.
-
 
 **PowerPoint Slides available here:** [Creating applications that can see, hear, speak or understand - using Microsoft Cognitive Services](ai-nights-beginner.pptx)
 
 > When you see **[BONUS SECTION]** in this content it means it is not designed for the 1 hour slot for the Cognitive Services within the beginner track, however if you wish to customise your session or learn about other parts of the Cognitive services you can us this content
 
-
 ## Pre-requisites for your machine
+
 * Clone this repository to your local machine to gain images and code samples you need for the demos: ```git clone https://github.com/amynic/ainights-sessionowners.git```
+If you plan to clone other Global AI Night workshops in the same folder, please use the following command to distinguish them since most have similar root directory names
+```git clone https://github.com/amynic/ainights-sessionowners.git BeginnerCognitiveServices```
 * [Microsoft Azure Subscription](https://azure.microsoft.com/en-gb/free/?WT.mc_id=ainights-github-amynic)
 * Laptop with a modern web browser (Google Chrome, Microsoft Edge)
-* [Postman, API Development Environment - available on Windows, Linux and macOS](https://www.getpostman.com/downloads/)
+* [Postman, API Development Environment - available on Windows, Linux and macOS](https://www.getpostman.com/downloads/) To ensure WiFi at the venue is not throttled, attendees can be informed to have this pre installed before arriving at the venue
 * **[BONUS SECTION]** [Download docker for your local machine - available on Windows, Linux and macOS](https://docs.docker.com/docker-for-windows/)
 
 > *All demos and content have been tested on a Windows PC, however all options should run from macOS and Linux machines as well. Please provide information via an issue or pull request if you have feedback on other operating systems*  
-
 
 ## Session Timings
 
@@ -33,13 +36,14 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 * **23 mins** - Build this sample into an app using Logic apps *(attendees - try it yourself)* [Go to Section](#build-custom-ai-into-an-application---azure-logic-apps)
 * **2 mins** - Useful links to share and finish
 
-
 ## Content Walk-through
 
 ## Microsoft Azure Cognitive Services - Computer Vision and Text Analytics
 
-First show the Microsoft Azure Cognitive Services in their simplest format - within the web browser. 
+First show the Microsoft Azure Cognitive Services in their simplest format - within the web browser.
 **Navigate to [https://azure.microsoft.com/en-gb/services/cognitive-services/](https://azure.microsoft.com/en-gb/services/cognitive-services/?WT.mc_id=ainights-github-amynic)**
+
+To ensure fluidity in your presentation, you can have the page opened in your browser before your session beginsand type in **Azure Cognitive Services** in the search box; it will usually be the first result displayed.
 
 Talk through the options from Vision, Speech, Language, Knowledge and Search very briefly
 
@@ -54,7 +58,7 @@ Select the **Demo** link next to **Scene and activity recognition in images** un
 Talk through example image shown by default. The ability to scroll through the JSON response and pick out the objects it found, the tags it assigned and description provided for example.
 
 ![Computer Vision Example](/docs-images/computer-vision-demo.JPG)
-
+x
 Now select **Browse** button and upload the **cat.jpeg** image from ```sample-images/computer-vision-web-browser/cat.jpeg```
 
 ![Computer Vision Cat Example](/docs-images/cat-sample.JPG)
@@ -72,6 +76,7 @@ Select **Create a resource** and search **Cognitive Services** and choose Enter.
 ![Create Cognitive Services Account](/docs-images/cognitive-azure.JPG)
 
 Enter details to create an account:
+
 * **Name:** enter a suitable name for the service (example: ainightscognitive)
 * **Subscription:** Choose a relevant subscription
 * **Location:** Choose your closest Data Center available
@@ -91,7 +96,7 @@ In the Cognitive Services blade, select **Keys** and copy **KEY 1**
 Now select **Overview** and copy the **Endpoint** variable
 ![Copy Endpoint](/docs-images/endpoint.JPG)
 
-Open Postman, API Development environment on your local machine. 
+Open Postman, API Development environment on your local machine.
 > Find the download in the [Pre-requisites section](#Pre-requisites-for-your-machine)
 
 Select Create a Request
@@ -107,6 +112,7 @@ Select the newly created collection and choose save
 ![Save Request](/docs-images/save.JPG)
 
 Now create a request to call your text analytics API:
+
 * Change from a GET request to a POST request in the top left
 * Enter your endpoint URL and add ```text/analytics/v2.0/sentiment``` to the end
 * Select Headers underneath the URL box
@@ -124,7 +130,6 @@ You can also try other options from the REST API - such as KeyPhrases function. 
 * ![Key Phrases REST Request](/docs-images/keyphrases.JPG)
 
 > Check out the language support for the Text Analytics API [here](https://docs.microsoft.com/en-gb/azure/cognitive-services/text-analytics/language-support/?WT.mc_id=ainights-github-amynic). If your language is supported please edit the JSON file to translate the text and show the functionality of the API above. There is an example of a French JSON file in ```sample-code/text-analytics-demo/sentiment-analysis-text-fr.json``` please edit this file as appropriate
-
 > If you have any issues running Postman, API Development Environment you can always run the REST API requests within the API docs for [sentiment analysis](https://northeurope.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9/?WT.mc_id=ainights-github-amynic) and [key phrase extraction](https://northeurope.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6/?WT.mc_id=ainights-github-amynic). Select the data centre you are using and then enter your key in the box provided along with the sample body sample used in Postman
 
 ## **[BONUS SECTION]** Microsoft Azure Cognitive Services - Text Analytics in a Container
@@ -172,47 +177,47 @@ To understand how to query the local API review the Swagger definition here: [ht
 ![Swagger Definition](docs-images/swagger.JPG)
 
 To test the API, make a new postman request:
+
 * POST
-* URL: http://localhost:5000/text/analytics/v2.0/sentiment
+* URL: <http://localhost:5000/text/analytics/v2.0/sentiment>
 * Headers:
-    * Content-Type : application/json
-    * ![Postman Request for Containers](docs-images/container-postman.JPG)
+  * Content-Type : application/json
+  * ![Postman Request for Containers](docs-images/container-postman.JPG)
 
 * Body:
-    * enter the sample JSON input from the [previous exercise](sample-code/text-analytics-demo/sentiment-analysis-text.json)
+  * enter the sample JSON input from the [previous exercise](sample-code/text-analytics-demo/sentiment-analysis-text.json)
     * ![Postman Request for Containers Result](docs-images/container-result.JPG)
-
 
 To stop the container from running when you finish, go back ot the command line and type **CTRL + C** this will show the application shutting down
 
 ![Application Shutdown](docs-images/application-shutdown.JPG)
-
 
 ## Microsoft Azure Cognitive Services - Custom Vision Demo
 
 Using Microsoft Azure Custom Vision service you can start to build your own personalised image classification and object detection algorithms with very little code. In this exercise we will create a dog-breed classification algorithm using Dog images from the [ImageNet open dataset created by Standford University](http://vision.stanford.edu/aditya86/ImageNetDogs/)
 
 We have 7 Classes of dogs each with 30 images (available in a .zip file [here](sample-images/dogs.zip))
+
 * Beagle
 * Bernese Mountain Dog
 * Chihuahua
 * Eskimo Dog (aka Husky)
-* German Shepherd 
+* German Shepherd
 * Golden Retriever
 * Maltese
 
 There is also a set of test images (not for training) in this [.zip folder](sample-images/dogs.zip).
 
-First create a Custom Vision instance in your Azure account. 
+First create a Custom Vision instance in your Azure account.
 
-* Go to the Azure Portal. 
-* Click 'Create a Resource' 
-* Search for 'Custom Vision' 
+* Go to the Azure Portal.
+* Click 'Create a Resource'
+* Search for 'Custom Vision'
 * On the description pane for Custom Vision click Create.
 * Enter details to create
-    * a name for the service 
-    * select your subscription 
-    * Please choose SOUTH CENTRAL US as the data centre
+  * a name for the service
+    * select your subscription
+    * **IMP:** Ensure you only choose **SOUTH CENTRAL US** as the location.
     * Choose the S0 tier for your pricing options
     * select the resource group you created previously for this project
     * Click Create
@@ -248,6 +253,7 @@ Once successful you receive a confirmation message and you should see your image
 ![Successful upload](docs-images/upload-successful.JPG)
 
 Now complete the same steps of uploading and tagging images for the other 6 dog categories in the folder. For each type of dog:
+
 * Click add images
 * Select the 30 new dog images
 * Add the class label (beagle, german-shepherd, maltese etc)
@@ -286,7 +292,6 @@ This image will disappear from the  your predictions workspace and be added to t
 
 To use this within applications you need the prediction details. Go to the performance tab from the top bar and choose **Publish** to make your predicition API available. Next give this published iteration a name
 
-
 ![Prediction URL Location](docs-images/custom-vision-publish.JPG)
 
 ![Prediction URL Name](docs-images/custom-vision-publish-name.JPG)
@@ -294,6 +299,8 @@ To use this within applications you need the prediction details. Go to the perfo
 Once complete select the **Prediction URL** button to find all the information you need to create a Postman call to your API (using both an image or an image URL)
 
 ![Prediction in Postman](docs-images/custom-vision-newpredictionurl.JPG)
+
+Hint: If you are going to test for the image file, in Postman,   for the Body, please opt for Binary mode and click the Select File button to choose the image file
 
 **Great work!** you have created your specialised dog classification model using the Azure Custom Vision Service
 
@@ -308,6 +315,7 @@ Go to the azure portal and click create new resource in the top left corner. Sel
 ![Azure Storage Account](docs-images/storage-account.JPG)
 
 We are going to create two storage accounts:
+
 * one for the images to be dropped into to be processed (called ainightstor)
 * another for the results after processing to be uploaded to (called resultainights)
 
@@ -326,6 +334,8 @@ On the storage account creation page enter options to setup your storage account
 
 Select **Review + create**, confirm validation is passed and then select **Create**
 
+Below picture depicts the possible configuration for the **second storage account**.
+
 ![Create Azure Storage Account](docs-images/create-storage-account.JPG)
 
 Once your deployment is complete, got to the resource and review the account settings.
@@ -335,9 +345,8 @@ Select **Blobs** to review your empty blob storage account.
 We need to add a container to the storage account to store our images and results.
 
 Select the **+ Container** button and create a name for the container
-> an example for the **ainightsstor** account would be **images** 
-
-> an example for the **resultsainights** account would be **results** 
+> an example for the **ainightsstor** account would be **images**
+> an example for the **resultsainights** account would be **results**
 
 For the public access level setting select **Container (anonymous read access for containers and blobs)**
 ![Create a container](docs-images/create-stor-container.JPG)
@@ -363,6 +372,7 @@ Once registered with a green tick - go back to the Azure Portal Homepage. Select
 ![Logic App](docs-images/logic-app.JPG)
 
 Create the logic app by entering some setup detail like below:
+
 * **Name:** suitable name for the dog classification application
 * **Subscription:** Choose your subscription
 * **Resource Group:** (use existing e.g. ainights) select the resource group you have been working for the whole workshop
@@ -377,13 +387,14 @@ Once created, go to resource. From here we can create our logic process. Select 
 
 ![Logic App Trigger](docs-images/logic-app-trigger.JPG)
 
-Connect to Azure event grid by signing in using your Azure credentials
+Connect to Azure event grid by signing in using your Azure credentials. Please opt for default instead of Microsoft in the dropdown.
 
 ![Event Grid Sign In](docs-images/event-grid-sign-in.JPG)
 
 Once connected and you see a green tick, select continue.
 
 Select the options below:
+
 * **Subscription:** your subscription
 * **Resource Type:** Microsoft.Storage.StorageAccounts
 * **Resource Name:** choose your image storage account (e.g. ainightsstor)
@@ -391,32 +402,36 @@ Select the options below:
 
 ![Event Grid Options](docs-images/event-grid-options.JPG)
 
-Then choose next step. Type **Parse JSON** and select the parse JSON operator as part of the data Data Operations category
+Then click on **New step** button. Type **Parse JSON** and select the parse JSON operator as part of the data Data Operations category
 
 * **Content:** select the box and from the Dynamic Content box on the right, select **Body**
 * **Schema:** select this box and enter the JSON schema provided in the [logic-app-schema1 file](sample-code/logic-app-demo/logic-app-schema1.json)
 
 ![Parse JSON](docs-images/parse-json.JPG)
 
-Then choose next step. Type **custom vision** and select the **Predict tags from image URL (preview)** as below
+Then cick on **New step** button below  . Type **custom vision** and select the **Classify an image URL (preview)** as below
 
 ![Custom vision - predict image url](docs-images/predict-image-url.JPG)
 
 Now we need to fill in the details of the custom vision process
 
+* **Connection Name:** Please provide a suitable name for connector to Custom Vison ![custom-vision-configuration](docs-images/custom-vision-configuration.jpg)
+
+* **Prediction Key:** Enter the *Prediction Key* value as shown in the **Prediction URL** tab under **Performance** heading of your Custom Vision page.
+
+* **Site URL:** Let this remain blank.
+
 * **Project ID:** Find the project ID from the settings logo in the top right of the Custom Vision webpage
-    * ![Find Custom Vision Project ID](docs-images/find-project-id.JPG)
-* **Published Name: ** You can find the published name from the performance tab in the Custom Vision service
-    * * ![Find Custom Vision Project ID](docs-images/find-published-name.JPG)
-* **Image URL:** select the input box and on the right side select URL from Parse JSON outputs
-    * ![Get URL for image](docs-images/get-url-to-predict.JPG)
-
-
+  * ![Find Custom Vision Project ID](docs-images/find-project-id.JPG)
+  * **Published Name:** You can find the published name from the performance tab in the Custom Vision service
+  * ![Find Custom Vision Project ID](docs-images/find-published-name.JPG)
+  * **Image URL:** select the input box and on the right side select URL from Parse JSON outputs
+  * ![Get URL for image](docs-images/get-url-to-predict.JPG)
 
 Choose next step
 
 type **for each** and select the grey control step called for each
-Once selected in the output from previous step box, select the box and from Dynamic content select **predictions** from the Parse JSON 2 category
+Once selected in the output from previous step box, select the box and from Dynamic content select **predictions** from the Classify an image 2 category
 
 ![For each prediction](docs-images/for-each-prediction-add-action.JPG)
 
@@ -426,11 +441,11 @@ Search Control, select the control icon and then from the results, select **Cond
 
 ![If Statement](docs-images/if-statement.JPG)
 
-In the Condition box, select choose a value. From Dynamic content find 'Predict Tags from Image URL' and then **Probability**
+In the Condition box, select choose a value. From Dynamic content find 'Classify an Image URL2' and then **Predictions Probability**
 
 Set the condition to be **Predictions Probability** greater than 0.7 (as shown below)
 
-![Condition value](docs-images/probability.JPG)
+![Condition value](docs-images/condition-predictions-probability.JPG)
 
 In the **If True** box select **Add an action**
 
@@ -442,9 +457,9 @@ In connection name enter **results** and select your results blob storage accoun
 
 In folder path, select the folder icon, far right, and choose the container name you created that is populated
 
-Select the Blob name field and enter: result-(then from the Dynamic content box under Parse Json (1) select **id**)
+Select the Blob name field and enter: result-(then from the Dynamic content box under Classify an Image URL 2 select **id**)
 
-Under Blob Content, select the field and in the Dynamic Content box on the right, select **see more** under the Parse Json 2 section. Then select **tagName**, enter a colon ":" and then select **probability**
+Under Blob Content, select the field and in the Dynamic Content box on the right, select **see more** under the Classify an Image 2 section. Then select **Predictions Tag**, enter a colon ":" and then select **Predictions Probability**
 
 ![Azure Blob Storage results options](docs-images/create-blob-connector.JPG)
 
@@ -454,7 +469,7 @@ Once saved, lets test the app for the desired outcome. Select **Run** from the t
 
 ![Run Logic App to test](docs-images/run-logic-app.JPG)
 
-Now navigate to your images storage account (easy to find from the resource group section). 
+Now navigate to your images storage account (easy to find from the resource group section).
 Choose Blob and select the images container. In there you should see an upload button. Upload one of the images from the Dogs data testset folder
 
 ![Upload Blob](docs-images/upload-blob.JPG)
@@ -472,9 +487,10 @@ Finally navigate to your results blob storage account, select blob, enter the re
 ![Result](docs-images/result.JPG)
 
 # **[BONUS SECTION]** Microsoft Power Apps
+
 ## Creating a front end application to take a picture of a dog and analyse it
 
-> NOTE: you must use your organizational account to use PowerApps. As this may become an issue 
+> Mandatory: Powerapps require a valid 0365 organizational credential.
 
 Navigate to: [https://powerapps.microsoft.com/en-us/?WT.mc_id=build2019-event-amynic](https://powerapps.microsoft.com/en-us/) and sign in with your organizational account.
 
@@ -502,7 +518,7 @@ Position the camera in good place on the page and you will see a properties pane
 
 Choose the **Advanced** tab from the properties pane. Under **Action** and **OnSelect** insert
 
-``` Collect(myPics, Camera1.Photo) ```
+```Collect(myPics, Camera1.Photo)```
 
 ![PowerApps Camera Logic](docs-images/powerapps-camera-logic.JPG)
 
@@ -511,6 +527,7 @@ Next we are going to insert a title for the application. Go to the **insert** ta
 ![PowerApps Insert Title](docs-images/powerapps-insert-title.JPG)
 
 Place the Title at the top of the page. Under the properties pane on the right update the options below:
+
 * **Text:** Dog Spotter (or another application name you would like)
 * **Font Size:** 60
 * **Text Alignment:** Center
@@ -533,8 +550,8 @@ On the properties pane, select **myPics** from the **Items** dropdown menu
 
 Now select a single image slot from the gallery and on the properties pane select the **Advanced** tab. Complete the code below for the correct fields:
 
-* OnSelect: ``` Remove(myPics, ThisItem) ```
-* Image: ``` ThisItem.Url ```
+* OnSelect: ```Remove(myPics, ThisItem)```
+* Image: ```ThisItem.Url```
 
 ![PowerApps Remove Images Setup](docs-images/powerapps-remove-image.JPG)
 
@@ -574,12 +591,10 @@ Once authenticated you will then see your blob storage connection added to the c
 
 Now we can use this connection in a function. Click on the **Send** button and switch to the **Advanced** pane.
 
-In the OnSelect box type: 
- ``` AzureBlobStorage.CreateFile("images", TextInput1.Text, Camera1.Photo) ```
-
+In the OnSelect box type:
+ ```AzureBlobStorage.CreateFile("images", TextInput1.Text, Camera1.Photo)```
 
 ![PowerApps Azure Blob Function](docs-images/powerapps-function.JPG)
-
 
 Now we have built an app lets test it in our development environment. In the top right of the screen you will see the toolbar below - press the **Play** button highlighted. This will open a new window with your application running. This will ask for access to your camera to test the app
 
@@ -605,7 +620,7 @@ In **App Name and Icon** select a background color for your application and choo
 
 ![PowerApps Change App Settings](docs-images/powerapps-app-settings.JPG)
 
-In order to view your published app on your phone you will need to download the PowerApps app from your app store. 
+In order to view your published app on your phone you will need to download the PowerApps app from your app store.
 
 > For this tutorial the instructions will be for IOS.
 
@@ -631,14 +646,11 @@ Provide your application useful name to be shown on your phone and select Add
 
 ![PowerApps Home Screen Details](docs-images/powerapps-homescreen-detail.png)
 
-## Congratulations!! 
+## Congratulations
 
 The app is now added to your phone home screen and you can open and run the functionality.
 
 Test the app by taking a picture of a dog and sending it to the cloud.
 
-I am really keen to hear your feedback, thoughts and see the outcomes you create from this tutorial. 
+I am really keen to hear your feedback, thoughts and see the outcomes you create from this tutorial.
 Find me on Twitter: [@AmyKateNicho](https://twitter.com/AmyKateNicho) and LinkedIn: [https://www.linkedin.com/in/amykatenicho/](https://www.linkedin.com/in/amykatenicho/)
-
-
-

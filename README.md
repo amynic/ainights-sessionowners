@@ -58,7 +58,7 @@ Select the **Demo** link next to **Scene and activity recognition in images** un
 Talk through example image shown by default. The ability to scroll through the JSON response and pick out the objects it found, the tags it assigned and description provided for example.
 
 ![Computer Vision Example](/docs-images/computer-vision-demo.JPG)
-x
+
 Now select **Browse** button and upload the **cat.jpeg** image from ```sample-images/computer-vision-web-browser/cat.jpeg```
 
 ![Computer Vision Cat Example](/docs-images/cat-sample.JPG)
@@ -179,7 +179,7 @@ To understand how to query the local API review the Swagger definition here: [ht
 To test the API, make a new postman request:
 
 * POST
-* URL: <http://localhost:5000/text/analytics/v2.0/sentiment>
+* URL: [http://localhost:5000/text/analytics/v2.0/sentiment](http://localhost:5000/text/analytics/v2.0/sentiment)
 * Headers:
   * Content-Type : application/json
   * ![Postman Request for Containers](docs-images/container-postman.JPG)

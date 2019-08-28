@@ -646,7 +646,7 @@ Provide your application useful name to be shown on your phone and select Add
 
 ![PowerApps Home Screen Details](docs-images/powerapps-homescreen-detail.png)
 
-## Congratulations
+***Congratulations!!!***
 
 The app is now added to your phone home screen and you can open and run the functionality.
 

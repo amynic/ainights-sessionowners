@@ -9,8 +9,8 @@ This GitHub repository is provided for **session owners** to access and learn co
 
 **Session Title:** Creating applications that can see, hear, speak or understand - using Microsoft Cognitive Services
 
-**Session Abstract:** In this workshop you will be introduced to the [Microsoft Azure Cognitive Services](https://azure.microsoft.com/en-gb/services/cognitive-services/?WT.mc_id=ainights-github-amynic), a range of offerings you can use to infuse intelligence and machine learning into your applications without needing to build the code from scratch.
-We will cover pre-trained AI APIs, such as [computer vision](https://azure.microsoft.com/en-gb/services/cognitive-services/directory/vision/?WT.mc_id=ainights-github-amynic) and [text analytics](https://azure.microsoft.com/en-gb/services/cognitive-services/directory/lang/?WT.mc_id=ainights-github-amynic), that are accessed by REST protocol. nEXT we will dive into Custom AI that uses transfer learning - [Microsoft Azure Custom Vision](https://azure.microsoft.com/en-gb/services/cognitive-services/custom-vision-service/?WT.mc_id=ainights-github-amynic). This enables you to provide a small amount of your own data to train an image classification model. Wrapping the workshop up by building our custom trained AI into an application - using [Logic Apps](https://azure.microsoft.com/en-gb/services/logic-apps/?WT.mc_id=ainights-github-amynic), this technology is ideal for building data pipeline processes that work with your machine learning models.
+**Session Abstract:** In this workshop you will be introduced to the [Microsoft Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/?WT.mc_id=aiml-0000-amynic), a range of offerings you can use to infuse intelligence and machine learning into your applications without needing to build the code from scratch.
+We will cover pre-trained AI APIs, such as [computer vision](https://azure.microsoft.com/services/cognitive-services/directory/vision/?WT.mc_id=aiml-0000-amynic) and [text analytics](https://azure.microsoft.com/services/cognitive-services/directory/lang/?WT.mc_id=aiml-0000-amynic), that are accessed by REST protocol. nEXT we will dive into Custom AI that uses transfer learning - [Microsoft Azure Custom Vision](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/?WT.mc_id=aiml-0000-amynic). This enables you to provide a small amount of your own data to train an image classification model. Wrapping the workshop up by building our custom trained AI into an application - using [Logic Apps](https://azure.microsoft.com/services/logic-apps/?WT.mc_id=aiml-0000-amynic), this technology is ideal for building data pipeline processes that work with your machine learning models.
 
 **PowerPoint Slides available here:** [Creating applications that can see, hear, speak or understand - using Microsoft Cognitive Services](ai-nights-beginner.pptx)
 
@@ -21,7 +21,7 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 * Clone this repository to your local machine to gain images and code samples you need for the demos: ```git clone https://github.com/amynic/ainights-sessionowners.git```
 If you plan to clone other Global AI Night workshops in the same folder, please use the following command to distinguish them since most have similar root directory names
 ```git clone https://github.com/amynic/ainights-sessionowners.git BeginnerCognitiveServices```
-* [Microsoft Azure Subscription](https://azure.microsoft.com/en-gb/free/?WT.mc_id=ainights-github-amynic)
+* [Microsoft Azure Subscription](https://azure.microsoft.com/free/?WT.mc_id=aiml-0000-amynic)
 * Laptop with a modern web browser (Google Chrome, Microsoft Edge)
 * [Postman, API Development Environment - available on Windows, Linux and macOS](https://www.getpostman.com/downloads/) To ensure WiFi at the venue is not throttled, attendees can be informed to have this pre installed before arriving at the venue
 * **[BONUS SECTION]** [Download docker for your local machine - available on Windows, Linux and macOS](https://docs.docker.com/docker-for-windows/)
@@ -41,13 +41,13 @@ If you plan to clone other Global AI Night workshops in the same folder, please 
 ## Microsoft Azure Cognitive Services - Computer Vision and Text Analytics
 
 First show the Microsoft Azure Cognitive Services in their simplest format - within the web browser.
-**Navigate to [https://azure.microsoft.com/en-gb/services/cognitive-services/](https://azure.microsoft.com/en-gb/services/cognitive-services/?WT.mc_id=ainights-github-amynic)**
+**Navigate to [https://azure.microsoft.com/services/cognitive-services/?WT.mc_id=aiml-0000-amynic](https://azure.microsoft.com/services/cognitive-services/?WT.mc_id=aiml-0000-amynic)**
 
 To ensure fluidity in your presentation, you can have the page opened in your browser before your session beginsand type in **Azure Cognitive Services** in the search box; it will usually be the first result displayed.
 
 Talk through the options from Vision, Speech, Language, Knowledge and Search very briefly
 
-Select **Vision** to navigate to: [https://azure.microsoft.com/en-gb/services/cognitive-services/directory/vision/](https://azure.microsoft.com/en-gb/services/cognitive-services/directory/vision/?WT.mc_id=ainights-github-amynic)
+Select **Vision** to navigate to: [https://azure.microsoft.com/services/cognitive-services/directory/vision/?WT.mc_id=aiml-0000-amynic](https://azure.microsoft.com/services/cognitive-services/directory/vision/?WT.mc_id=aiml-0000-amynic)
 
 ![Computer Vision website Link highlighted](/docs-images/computer-vision-link.JPG)
 
@@ -129,12 +129,12 @@ You can also try other options from the REST API - such as KeyPhrases function. 
 
 * ![Key Phrases REST Request](/docs-images/keyphrases.JPG)
 
-> Check out the language support for the Text Analytics API [here](https://docs.microsoft.com/en-gb/azure/cognitive-services/text-analytics/language-support/?WT.mc_id=ainights-github-amynic). If your language is supported please edit the JSON file to translate the text and show the functionality of the API above. There is an example of a French JSON file in ```sample-code/text-analytics-demo/sentiment-analysis-text-fr.json``` please edit this file as appropriate
-> If you have any issues running Postman, API Development Environment you can always run the REST API requests within the API docs for [sentiment analysis](https://northeurope.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9/?WT.mc_id=ainights-github-amynic) and [key phrase extraction](https://northeurope.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6/?WT.mc_id=ainights-github-amynic). Select the data centre you are using and then enter your key in the box provided along with the sample body sample used in Postman
+> Check out the language support for the Text Analytics API [here](https://docs.microsoft.com/azure/cognitive-services/text-analytics/language-support/?WT.mc_id=aiml-0000-amynic). If your language is supported please edit the JSON file to translate the text and show the functionality of the API above. There is an example of a French JSON file in ```sample-code/text-analytics-demo/sentiment-analysis-text-fr.json``` please edit this file as appropriate
+> If you have any issues running Postman, API Development Environment you can always run the REST API requests within the API docs for [sentiment analysis](https://northeurope.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9/?WT.mc_id=aiml-0000-amynic) and [key phrase extraction](https://northeurope.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c6/?WT.mc_id=aiml-0000-amynic). Select the data centre you are using and then enter your key in the box provided along with the sample body sample used in Postman
 
 ## **[BONUS SECTION]** Microsoft Azure Cognitive Services - Text Analytics in a Container
 
-Demo based on the Azure Documentation: [Install and run Text Analytics containers](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-install-containers/?WT.mc_id=ainights-github-amynic)
+Demo based on the Azure Documentation: [Install and run Text Analytics containers](https://docs.microsoft.com/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-install-containers/?WT.mc_id=aiml-0000-amynic)
 
 In order to run this demo you will need Docker installed locally on your machine
 [Download docker for your local machine here - available on Windows, Linux and macOS](https://docs.docker.com/docker-for-windows/)
@@ -492,7 +492,7 @@ Finally navigate to your results blob storage account, select blob, enter the re
 
 > Mandatory: Powerapps require a valid 0365 organizational credential.
 
-Navigate to: [https://powerapps.microsoft.com/en-us/?WT.mc_id=build2019-event-amynic](https://powerapps.microsoft.com/en-us/) and sign in with your organizational account.
+Navigate to: [https://powerapps.microsoft.com/?WT.mc_id=aiml-0000-amynic](https://powerapps.microsoft.com/?WT.mc_id=aiml-0000-amynic) and sign in with your organizational account.
 
 This will take you to the PowerApps main menu screen. Select the **Canvas App from Blank** button
 
